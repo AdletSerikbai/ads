@@ -1,31 +1,28 @@
-Weighted Graph Implementation with BFS and Dijkstra's Algorithm
+# Weighted Graph Implementation with BFS and Dijkstra's Algorithm
 
 This project implements a weighted graph using vertices instead of edges and includes implementations for Breadth-First Search (BFS) and Dijkstra's algorithm for finding the shortest path.
 
-Table of Contents
+## Table of Contents
+- [Introduction](#introduction)
+- [Classes](#classes)
+  - [Vertex](#vertex)
+  - [Edge](#edge)
+  - [WeightedGraph](#weightedgraph)
+  - [BreadthFirstSearch](#breadthfirstsearch)
+  - [DijkstraSearch](#dijkstrasearch)
+- [Usage](#usage)
+- [Example](#example)
+- [Setup](#setup)
+- [License](#license)
 
-Introduction
-Classes
-Vertex
-Edge
-WeightedGraph
-BreadthFirstSearch
-DijkstraSearch
-Usage
-Example
-Setup
-License
-Introduction
-
+## Introduction
 This project demonstrates a basic implementation of a weighted graph, where vertices are connected by weighted edges. The graph supports the addition of vertices and edges, and includes algorithms for traversing the graph using BFS and finding the shortest path using Dijkstra's algorithm.
 
-Classes
+## Classes
 
-Vertex
+### Vertex
 Represents a vertex in the graph, holding data and a map of adjacent vertices with their corresponding weights.
-
-java
-Кодты көшіру
+```java
 public class Vertex<V> {
     private V data;
     private Map<Vertex<V>, Double> adjacentVertices;
@@ -35,11 +32,11 @@ public class Vertex<V> {
     public V getData() { /*...*/ }
     public Map<Vertex<V>, Double> getAdjacentVertices() { /*...*/ }
 }
-Edge
-Represents an edge in the graph, connecting two vertices with a specified weight.
+```
 
-java
-Кодты көшіру
+### Edge
+Represents an edge in the graph, connecting two vertices with a specified weight.
+```java
 public class Edge<V> {
     private Vertex<V> source;
     private Vertex<V> dest;
@@ -50,11 +47,11 @@ public class Edge<V> {
     public Vertex<V> getDest() { /*...*/ }
     public double getWeight() { /*...*/ }
 }
-WeightedGraph
-Maintains a map of vertices and their edges, allowing for the addition of vertices and edges.
+```
 
-java
-Кодты көшіру
+### WeightedGraph
+Maintains a map of vertices and their edges, allowing for the addition of vertices and edges.
+```java
 public class WeightedGraph<V> {
     private Map<Vertex<V>, List<Edge<V>>> map = new HashMap<>();
 
@@ -62,30 +59,29 @@ public class WeightedGraph<V> {
     public void addEdge(V source, V dest, double weight) { /*...*/ }
     public List<Edge<V>> getEdges(Vertex<V> vertex) { /*...*/ }
 }
-BreadthFirstSearch
-Implements BFS to traverse the graph from a given start vertex.
+```
 
-java
-Кодты көшіру
+### BreadthFirstSearch
+Implements BFS to traverse the graph from a given start vertex.
+```java
 public class BreadthFirstSearch<V> {
     public List<Vertex<V>> bfs(WeightedGraph<V> graph, Vertex<V> start) { /*...*/ }
 }
-DijkstraSearch
-Implements Dijkstra's algorithm to find the shortest path from a given start vertex.
+```
 
-java
-Кодты көшіру
+### DijkstraSearch
+Implements Dijkstra's algorithm to find the shortest path from a given start vertex.
+```java
 public class DijkstraSearch<V> {
     public Map<Vertex<V>, Double> dijkstra(WeightedGraph<V> graph, Vertex<V> start) { /*...*/ }
 }
-Usage
+```
 
-To use this code, create instances of Vertex, Edge, and WeightedGraph, add vertices and edges to the graph, and perform BFS or Dijkstra's algorithm to traverse the graph or find the shortest path.
+## Usage
+To use this code, create instances of `Vertex`, `Edge`, and `WeightedGraph`, add vertices and edges to the graph, and perform BFS or Dijkstra's algorithm to traverse the graph or find the shortest path.
 
-Example
-
-java
-Кодты көшіру
+## Example
+```java
 public class Main {
     public static void main(String[] args) {
         WeightedGraph<String> graph = new WeightedGraph<>();
@@ -107,11 +103,12 @@ public class Main {
         System.out.println("Dijkstra shortest paths: " + dijkstra.dijkstra(graph, new Vertex<>("A")));
     }
 }
-Setup
+```
 
-Clone the repository.
-Open the project in your favorite IDE.
-Run the Main class to see the example usage.
-License
+## Setup
+1. Clone the repository.
+2. Open the project in your favorite IDE.
+3. Run the `Main` class to see the example usage.
 
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
